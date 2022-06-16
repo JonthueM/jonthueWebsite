@@ -5,14 +5,13 @@ import 'package:chewie/chewie.dart';
 
 
 
-class shell extends StatefulWidget {
-  const shell({Key? key}) : super(key: key);
-
+class Shell extends StatefulWidget {
   @override
-  State<shell> createState() => _shellState();
+  _ShellState createState() => _ShellState();
 }
 
-class _shellState extends State<shell> {
+class _ShellState extends State<Shell> {
+  
   final VideoPlayerController videoPlayerController = 
     VideoPlayerController.asset("assets/video.mp4");
 
@@ -20,10 +19,10 @@ class _shellState extends State<shell> {
 
   
   @override
-  void iniState(){
+  void initState(){
     chewieController = ChewieController(
       videoPlayerController: videoPlayerController,
-      aspectRatio: 9 / 20,
+      aspectRatio: 16 / 9,
       autoPlay: true,
       looping: true,
       autoInitialize: true,
@@ -38,8 +37,9 @@ class _shellState extends State<shell> {
     super.dispose();
   }
 
+  
   _getVideoBackground() {
-    return Expanded(
+    return Container(
       child: Chewie(
         controller: chewieController!,
         ),
@@ -48,7 +48,7 @@ class _shellState extends State<shell> {
 
 _getBackgroundColor(){
   return Container(
-    color: Colors.blue.withAlpha(120),
+    color: Color.fromARGB(228, 19, 18, 18),
   );
 }
 
