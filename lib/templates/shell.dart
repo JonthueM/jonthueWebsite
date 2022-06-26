@@ -1,7 +1,8 @@
 
-import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:flutter/material.dart';
 import 'package:chewie/chewie.dart';
+import './layout.dart';
 
 
 
@@ -60,6 +61,7 @@ _getBackgroundColor(){
           children: <Widget>[
             _getVideoBackground(),
             _getBackgroundColor(),
+            Layout(),
           ],
         ),
       ),

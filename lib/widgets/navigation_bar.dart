@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import './navigation_item.dart';
 
 class NavBar_Web extends StatelessWidget {
   const NavBar_Web({Key? key}) : super(key: key);
@@ -11,24 +12,13 @@ class NavBar_Web extends StatelessWidget {
       height: 100.0,
       child: Row(
         mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(
-            'Home',
-            style: TextStyle(fontSize: 20.0),
-          ),
-          Text(
-            'About',
-            style: TextStyle(fontSize: 20.0),
-          ),
-          Text(
-            'Projects',
-            style: TextStyle(fontSize: 20.0),
-          ),
-          Text(
-            'Contact',
-            style: TextStyle(fontSize: 20.0),
-          ),
-          
+         NavItem(title: 'Home'),
+         NavItem(title: 'About'),
+         NavItem(title: 'Projects'),
+         NavItem(title: 'Contact'),
         ],
       ),
     );
